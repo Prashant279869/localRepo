@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/style.css">
   <title>Document</title>
 </head>
+
 <body>
-  <h2>#next next</h2>
+  <section id="nav">
+    <nav>
+      <div class="container">
+        <div class="logo">Logo</div>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu" id="menu">
+          <ul>
+            <li>Home</li>
+            <li>Certificate</li>
+            <li>Product</li>
+            <li>About</li>
+          </ul>
+        </div>
+        <div class="profile">
+          <img src="https://cdn-icons-png.flaticon.com/512/6522/6522516.png" alt="profile">
+        </div>
+      </div>
+    </nav>
+  </section>
+
+  <script>
+    // Hamburger menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      menu.classList.toggle('active');
+    });
+
+    // Close menu when a menu item is clicked
+    const menuItems = menu.querySelectorAll('li');
+    menuItems.forEach(item => {
+      item.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        menu.classList.remove('active');
+      });
+    });
+  </script>
 </body>
+
 </html>
